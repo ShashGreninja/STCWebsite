@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { Button } from "./components/ui/button"
 
 import { ContainerScroll } from './components/ui/container-scroll-animation'
-import { Home, Info, Calendar, Users } from 'lucide-react'
+import { Home, Info, Calendar, Users, Code } from 'lucide-react'
 import { Montserrat } from 'next/font/google'
 import { Carousel, Card } from "./components/ui/apple-cards-carousel"
 import { Timeline } from "./components/ui/timeline"
@@ -106,7 +106,7 @@ export default function Page() {
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
             pqr position among z IITs in the meet.
           </p>
-          
+
           <div className="grid grid-cols-2 gap-4">
             <Image
               src="https://assets.aceternity.com/pro/hero-sections.png"
@@ -204,27 +204,46 @@ export default function Page() {
               <li className="flex-shrink-0 mr-6">
                 <span className="text-2xl font-extrabold text-white">STC</span>
               </li>
-              {[
-                { name: 'Home', icon: Home },
-                { name: 'About', icon: Info },
-                { name: 'Events', icon: Calendar },
-                { name: 'Team', icon: Users },
-              ].map((item) => (
-                <li key={item.name}>
-                  <button
-                    onClick={() => setActiveTab(item.name.toLowerCase())}
-                    className={`flex items-center space-x-1 p-2 rounded-full transition-colors ${activeTab === item.name.toLowerCase() ? 'bg-white text-black' : 'text-white hover:bg-white/10'
-                      }`}
-                  >
-                    <item.icon className="w-5 h-5" />
-                    <span className="hidden sm:inline">{item.name}</span>
-                  </button>
-                </li>
-              ))}
+              {
+                [
+                  { name: 'Home', icon: Home },
+                  { name: 'About', icon: Info },
+                  { name: 'Events', icon: Calendar },
+                  { name: 'Tech Season', icon: Code, href: 'https://stc.iitp.ac.in/techseason/index.html' },
+                  { name: 'Team', icon: Users }
+                ].map((item) => (
+                  <li key={item.name}>
+                    {item.href ? (
+                      // Use <a> for items with href
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`flex items-center space-x-1 p-2 rounded-full transition-colors ${activeTab === item.name.toLowerCase() ? 'bg-white text-black' : 'text-white hover:bg-white/10'
+                          }`}
+                      >
+                        <item.icon className="w-5 h-5" />
+                        <span className="hidden sm:inline">{item.name}</span>
+                      </a>
+                    ) : (
+                      // Use <button> for items without href
+                      <button
+                        onClick={() => setActiveTab(item.name.toLowerCase())}
+                        className={`flex items-center space-x-1 p-2 rounded-full transition-colors ${activeTab === item.name.toLowerCase() ? 'bg-white text-black' : 'text-white hover:bg-white/10'
+                          }`}
+                      >
+                        <item.icon className="w-5 h-5" />
+                        <span className="hidden sm:inline">{item.name}</span>
+                      </button>
+                    )}
+                  </li>
+                ))
+              }
+
             </ul>
           </div>
         </nav>
-        
+
         <main className="flex-grow flex flex-col items-center justify-center text-center px-4 relative">
           <div className="absolute inset-0 z-0">
             <Image
@@ -259,7 +278,7 @@ export default function Page() {
                 />
               </ContainerScroll>
             </div>
-            
+
           </div>
         </main>
       </div>
@@ -267,23 +286,23 @@ export default function Page() {
       <div className="w-full pt-200vh lg:pt-[50vh]">
         <Timeline data={data_} />
       </div>
-      
+
       <div className="w-full h-full py-20">
         <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
-          STC Events 
+          STC Events
         </h2>
         <Carousel items={cards} />
       </div>
-      
-      
+
+
 
       <div className="h-[20rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl mx-auto w-full  items-start justify-start my-20">
         <Tabs tabs={tabs} />
       </div>
 
       <div className="items-center justify-center text-center space-y-4 sm:space-y-0 sm:space-x-6 pt-32 pb-4">
-              <Button variant="default" size="lg">Learn More</Button>
-              <Button variant="outline" size="lg">Contact Us</Button>
+        <Button variant="default" size="lg">Learn More</Button>
+        <Button variant="outline" size="lg">Contact Us</Button>
       </div>
     </>
   )
