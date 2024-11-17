@@ -264,7 +264,7 @@ export default function Page() {
         </main>
       </div>
 
-      <div className="w-full">
+      <div className="w-full pt-200vh lg:pt-[50vh]">
         <Timeline data={data_} />
       </div>
       
@@ -277,11 +277,11 @@ export default function Page() {
       
       
 
-      <div className="h-[20rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl mx-auto w-full  items-start justify-start my-40">
+      <div className="h-[20rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl mx-auto w-full  items-start justify-start my-20">
         <Tabs tabs={tabs} />
       </div>
 
-      <div className="items-center justify-center text-center space-y-4 sm:space-y-0 sm:space-x-6">
+      <div className="items-center justify-center text-center space-y-4 sm:space-y-0 sm:space-x-6 pt-32 pb-4">
               <Button variant="default" size="lg">Learn More</Button>
               <Button variant="outline" size="lg">Contact Us</Button>
       </div>
