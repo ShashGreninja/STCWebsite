@@ -31,7 +31,7 @@ type Card = {
 export const CarouselContext = createContext<{
   onCardClose: (index: number) => void;
   currentIndex: number;
-}>({
+}>( {
   onCardClose: () => {},
   currentIndex: 0,
 });
@@ -239,7 +239,7 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[40rem] md:w-96 overflow-hidden flex flex-col items-start justify-start relative z-10"
+        className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-[300px] w-[300px] md:h-[400px] md:w-[400px] overflow-hidden flex flex-col items-start justify-start relative z-10"
       >
         <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
         <div className="relative z-40 p-8">
@@ -267,31 +267,14 @@ export const Card = ({
   );
 };
 
-export const BlurImage = ({
-  height,
-  width,
-  src,
-  className,
-  alt,
-  ...rest
-}: ImageProps) => {
-  const [isLoading, setLoading] = useState(true);
+function BlurImage({ src, alt, ...props }: ImageProps) {
   return (
     <Image
-      className={cn(
-        "transition duration-300",
-        isLoading ? "blur-sm" : "blur-0",
-        className
-      )}
-      onLoad={() => setLoading(false)}
       src={src}
-      width={width}
-      height={height}
-      loading="lazy"
-      decoding="async"
-      blurDataURL={typeof src === "string" ? src : undefined}
-      alt={alt ? alt : "Background of a beautiful view"}
-      {...rest}
+      alt={alt}
+      placeholder="blur"
+      blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0ibm9uZSIgdmVyc2lvbj0iMS4xIj4KPHBhdGggZD0iTTEwMCAxMEgxMDAwTDExMDAgMTAsMSIgZmlsbD0iIzAwMDAwMCIvPjwvc3ZnPg=="
+      {...props}
     />
   );
-};
+}
