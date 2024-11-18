@@ -1,27 +1,52 @@
 'use client'
 
-import { useState } from 'react'
+import { useState , useRef , useEffect} from 'react'
 import Image from 'next/image'
 import { Button } from "./components/ui/button"
-
+import  Link  from "next/link"
 import { ContainerScroll } from './components/ui/container-scroll-animation'
-import { Home, Info, Calendar, Users, Code } from 'lucide-react'
+import { Home, Info, Calendar, Users, Code ,ChevronDown} from 'lucide-react'
 import { Montserrat } from 'next/font/google'
 import { Carousel, Card } from "./components/ui/apple-cards-carousel"
 import { Timeline } from "./components/ui/timeline"
 import { Tabs } from "../app/components/ui/tabs"
+import { useRouter } from "next/router"
+
 
 import APC from "../app/images/APC.png";
 import MoodBoard from "../app/images/MoodBoard.jpg";
 import NJACK from "../app/images/NJACK.png";
 import Sparkonics from "../app/images/Sparkonics.png";
 import { AnimatedTestimonials } from './components/ui/animated-testimonials'
+import Navbar from './components/Navbar'
 
 
 const montserrat = Montserrat({ subsets: ['latin'] })
+const clubsList = [
+  "Robotics Club", "Coding Club", "Electronics Club", "3D Printing Club",
+  "Aeromodelling Club", "Astronomy Club", "Automobile Club", "Biotech Club",
+  "Chemical Club", "Civil Club", "Design Club", "Energy Club",
+  "Finance Club", "Gaming Club", "Literary Club", "Mathematics Club",
+  "Music Club", "Photography Club", "Quizzing Club", "Sports Club"
+]
 
 export default function Page() {
   const [activeTab, setActiveTab] = useState('home')
+  const [isClubsOpen, setIsClubsOpen] = useState(false)
+  const dropdownRef = useRef<HTMLLIElement>(null)
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsClubsOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
   const cards = data.map((card, index) => (
     <Card key={card.src} card={card} index={index} />
   ));
@@ -261,52 +286,7 @@ export default function Page() {
   return (
     <>
       <div className={`min-h-screen flex flex-col ${montserrat.className}`}>
-        <nav id="#navbar" className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-20 backdrop-blur-lg shadow-lg rounded-full z-20">
-          <div className="px-4 py-2">
-            <ul className="flex items-center space-x-6">
-              <li className="flex-shrink-0 mr-6">
-                <span className="text-2xl font-extrabold text-white">STC</span>
-              </li>
-              {
-                [
-                  { name: 'Home', icon: Home, href: "#navbar" },
-                  { name: 'About', icon: Info, href:"#timeline"},
-                  { name: 'Events', icon: Calendar, href:"#events" },
-                  { name: 'Tech Season', icon: Code, href: 'https://stc.iitp.ac.in/techseason/index.html' },
-                  { name: 'Team', icon: Users, href:"#team" }
-                ].map((item) => (
-                  <li key={item.name}>
-                    {item.href ? (
-                      // Use <a> for items with href
-                      <a
-                        href={item.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`flex items-center space-x-1 p-2 rounded-full transition-colors ${activeTab === item.name.toLowerCase() ? 'bg-white text-black' : 'text-white hover:bg-white/10'
-                          }`}
-                      >
-                        <item.icon className="w-5 h-5" />
-                        <span className="hidden sm:inline">{item.name}</span>
-                      </a>
-                    ) : (
-                      // Use <button> for items without href
-                      <button
-                        onClick={() => setActiveTab(item.name.toLowerCase())}
-                        className={`flex items-center space-x-1 p-2 rounded-full transition-colors ${activeTab === item.name.toLowerCase() ? 'bg-white text-black' : 'text-white hover:bg-white/10'
-                          }`}
-                      >
-                        <item.icon className="w-5 h-5" />
-                        <span className="hidden sm:inline">{item.name}</span>
-                      </button>
-                    )}
-                  </li>
-                ))
-              }
-
-            </ul>
-          </div>
-        </nav>
-
+     
         <main className="flex-grow flex flex-col items-center justify-center text-center px-4 relative">
           <div className="absolute inset-0 z-0">
             <Image
