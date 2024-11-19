@@ -4,6 +4,8 @@ import { useState , useRef , useEffect} from 'react'
 import Image from 'next/image'
 import { Button } from "./components/ui/button"
 import  Link  from "next/link"
+import "boxicons/css/boxicons.min.css"
+
 import { ContainerScroll } from './components/ui/container-scroll-animation'
 import { Home, Info, Calendar, Users, Code ,ChevronDown} from 'lucide-react'
 import { Montserrat } from 'next/font/google'
@@ -20,6 +22,7 @@ import Sparkonics from "../app/images/Sparkonics.png";
 import { AnimatedTestimonials } from './components/ui/animated-testimonials'
 import Navbar from './components/Navbar'
 
+import "./scroll-smooth.css"
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 const clubsList = [
@@ -29,6 +32,44 @@ const clubsList = [
   "Finance Club", "Gaming Club", "Literary Club", "Mathematics Club",
   "Music Club", "Photography Club", "Quizzing Club", "Sports Club"
 ]
+
+function AboutCard({ icon, head, body }: { icon: string, head: string, body: string }) {
+  const [show, setShow] = useState(false);
+  return (
+    <div>
+      <button onClick={() => setShow(!show)}>
+        <div className="flex items-center">
+          <i className={`bx ${icon} text-3xl`}></i>
+          {head}
+        </div>
+      </button>
+      { show && <p>{body}</p> }
+      <hr />
+    </div>
+  )
+}
+
+function Footer() {
+  return (
+    <div className="flex items-center px-20">
+      <div className="basis-0 grow">
+            <Image
+              src="https://stc.iitp.ac.in/assets/img/logo-text.png"
+              alt="STC Logo"
+              width={500}
+              height={500}
+            />
+        <p>The council of Student's Gymkhana to nurture the advancement of technical culture of Indian Institute of Technology, Patna</p>
+      </div>
+      <div className="flex flex-col basis-0 grow">
+        <h1>QUICK LINKS</h1>
+        <p>NJACK</p>
+        <p>Sparkonics</p>
+      </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14399.37835508978!2d84.8434447170254!3d25.54355318850096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398d567a193702ff%3A0xc9c527c7faec3056!2sIIT+Patna+Administration+Block!5e0!3m2!1sen!2sin!4v1539177184721" allowFullScreen className="w-[300px] h-[200px] sm:w-[400px] sm:h-[300px]" style={{ border: 0 }}></iframe>
+    </div>
+  )
+}
 
 export default function Page() {
   const [activeTab, setActiveTab] = useState('home')
@@ -286,7 +327,6 @@ export default function Page() {
   return (
     <>
       <div className={`min-h-screen flex flex-col ${montserrat.className}`}>
-     
         <main className="flex-grow flex flex-col items-center justify-center text-center px-4 relative">
           <div className="absolute inset-0 z-0">
             <Image
@@ -347,6 +387,38 @@ export default function Page() {
         <Button variant="default" size="lg">Learn More</Button>
         <Button variant="outline" size="lg">Contact Us</Button>
       </div>
+      <div className="flex flex-col gap-8 items-center justify-center px-20" id="about">
+        <h1 className="text-6xl tracking-widest py-8">ABOUT <span className="text-blue-500">US</span></h1>
+        <p className="text-gray-600">STC aims to unify various technical clubs, research activities, competitions, and interdisciplinary projects, providing a platform for students to turn their innovative ideas into reality. By coordinating all technical clubs under one umbrella, STC will create a collaborative environment for budding engineers. Its mission is to enhance the technical skills and knowledge of students, fostering innovation and technological advancements through three core concepts</p>
+        <div className="w-full flex items-center gap-8">
+            <Image
+              src="/images/admin_sideview.jfif"
+              alt="Admin Sideview"
+              width={602}
+              height={421}
+              className="basis-0 grow rounded-2xl"
+            />
+            <div className="basis-0 grow">
+              <AboutCard
+                icon="bxs-group"
+                head="Learning and growing together"
+                body="STC intends to create a forum by bringing the whole students community together where students can learn, share and grow together pioneering new ideas and inventions."
+              />
+              <AboutCard
+                icon="bx-medal"
+                head="Intra college technical competition and other activities"
+                body="Organising various competitions, activities and events to nurture the growth of embryonic engineers and providing them exposure to various technical areas and competitions."
+              />
+              <AboutCard
+                icon="bx-home-circle"
+                head="Organisation of the technical clubs"
+                body="STC objectives include streamlining all the existing technical clubs as well as facilitating the establishment of the new clubs."
+              />
+            </div>
+        </div>
+      </div>
+      <hr />
+      <Footer />
     </>
   )
 }
@@ -600,3 +672,4 @@ const testimonials4 = [
     src: "/images/team2021-22/kalpana.jpg",
   },
 ];
+/* vi: set et sw=2: */
