@@ -14,11 +14,6 @@ import { Timeline } from "./components/ui/timeline"
 import { Tabs } from "../app/components/ui/tabs"
 import { useRouter } from "next/router"
 
-
-import APC from "../app/images/APC.png";
-import MoodBoard from "../app/images/MoodBoard.jpg";
-import NJACK from "../app/images/NJACK.png";
-import Sparkonics from "../app/images/Sparkonics.png";
 import { AnimatedTestimonials } from './components/ui/animated-testimonials'
 import Navbar from './components/Navbar'
 
@@ -51,7 +46,7 @@ function AboutCard({ icon, head, body }: { icon: string, head: string, body: str
 
 function Footer() {
   return (
-    <div className="flex items-center px-20">
+    <div className="flex items-center px-20 mb-8">
       <div className="basis-0 grow">
             <Image
               src="https://stc.iitp.ac.in/assets/img/logo-text.png"
@@ -66,7 +61,7 @@ function Footer() {
         <p>NJACK</p>
         <p>Sparkonics</p>
       </div>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14399.37835508978!2d84.8434447170254!3d25.54355318850096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398d567a193702ff%3A0xc9c527c7faec3056!2sIIT+Patna+Administration+Block!5e0!3m2!1sen!2sin!4v1539177184721" allowFullScreen className="w-[300px] h-[200px] sm:w-[400px] sm:h-[300px]" style={{ border: 0 }}></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3600.0697031196537!2d84.8513104!3d25.536054999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398d5700288d5577%3A0xb87d51692f417876!2sStudent&#39;s%20Technical%20Council%20Office!5e0!3m2!1sen!2sin!4v1732044561583!5m2!1sen!2sin" allowFullScreen className="w-[300px] h-[200px] sm:w-[400px] sm:h-[300px]" style={{ border: 0 }}></iframe>
     </div>
   )
 }
@@ -220,7 +215,7 @@ export default function Page() {
       title: "2024-25",
       value: "product",
       content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
+        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-[#491580] to-[#300356]">
           <p>2024-25 Team</p>
           <>
       {[...new Array(3).fill(1)].map((_, index) => {
@@ -384,8 +379,8 @@ export default function Page() {
       </div>
 
       <div className="items-center justify-center text-center space-y-4 sm:space-y-0 sm:space-x-6 pt-32 pb-4">
-        <Button variant="default" size="lg">Learn More</Button>
-        <Button variant="outline" size="lg">Contact Us</Button>
+        <Button variant="default" size="lg"></Button>
+        <Button variant="default" size="lg"></Button>
       </div>
       <div className="flex flex-col gap-8 items-center justify-center px-20" id="about">
         <h1 className="text-6xl tracking-widest py-8">ABOUT <span className="text-blue-500">US</span></h1>
@@ -417,7 +412,7 @@ export default function Page() {
             </div>
         </div>
       </div>
-      <hr />
+      <div className="items-center justify-center text-center space-y-4 sm:space-y-0 sm:space-x-6 pt-32 pb-4"></div>
       <Footer />
     </>
   )
