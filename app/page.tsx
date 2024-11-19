@@ -13,12 +13,14 @@ import { Carousel, Card } from "./components/ui/apple-cards-carousel"
 import { Timeline } from "./components/ui/timeline"
 import { Tabs } from "../app/components/ui/tabs"
 import { useRouter } from "next/router"
-
+import NeonButton from './components/ui/Button1'
 import { AnimatedTestimonials } from './components/ui/animated-testimonials'
 import Navbar from './components/Navbar'
 import { TechnicalAboutUs } from './components/ui/about-us'
-
+import { motion } from "framer-motion";
 import "./scroll-smooth.css"
+import { LampContainer } from './components/ui/lamp'
+import Button1 from './components/ui/Button1'
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 const clubsList = [
@@ -377,19 +379,64 @@ export default function Page() {
         <Carousel items={cards} />
       </div>
 
+      <div className="pt-24"><LampContainer>
+      <motion.h1
+        initial={{ opacity: 0.5, y: 100 }}
+        whileInView={{ opacity: 1, y: -20 }}
+        transition={{
+          delay: 0.3,
+          duration: 0.8,
+          ease: "easeInOut",
+        }}
+        className="mt-8 bg-gradient-to-br from-[#0a0a0a] to-[#0a0a0a] py-4 bg-clip-text text-center text-1xl font-medium tracking-tight text-transparent md:text-4xl pt-1"
+      >
+        P R E S E N T I N G
+        
+      </motion.h1>
+      <motion.h1
+        initial={{ opacity: 0.5, y: 100 }}
+        whileInView={{ opacity: 1, y: -30 }}
+        transition={{
+          delay: 0.3,
+          duration: 0.8,
+          ease: "easeInOut",
+        }}
+        className="mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-7xl font-medium tracking-tight text-transparent md:text-9xl pt-1"
+      >
+        O N E I I T P
+        
+      </motion.h1>
+      <motion.h1
+        initial={{ opacity: 0.5, y: 100 }}
+        whileInView={{ opacity: 1, y: -0 }}
+        transition={{
+          delay: 0.3,
+          duration: 0.8,
+          ease: "easeInOut",
+        }}
+        className="mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-1xl font-thin tracking-tight text-transparent md:text-2xl pt-1"
+      >
+    
+      <Button1/>
+      
+        
+      </motion.h1>
+      
+          </LampContainer>
+    </div>
 
-
-      <div className="h-[70rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl mx-auto w-full  items-start justify-start my-20" id="#team">
+      <div className="h-[70rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl mx-auto w-full  items-start justify-start my-10" id="#team">
         <Tabs tabs={tabs} />
       </div>
+
+      
 
       <div className="items-center justify-center text-center space-y-4 sm:space-y-0 sm:space-x-6 pt-32 pb-4">
         <Button variant="default" size="lg"></Button>
         <Button variant="default" size="lg"></Button>
       </div>
       
-      <div className="items-center justify-center text-center space-y-4 sm:space-y-0 sm:space-x-6 pt-32 pb-4"></div>
-      <Footer />
+      
     </>
   )
 }
