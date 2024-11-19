@@ -16,6 +16,7 @@ import { useRouter } from "next/router"
 
 import { AnimatedTestimonials } from './components/ui/animated-testimonials'
 import Navbar from './components/Navbar'
+import { TechnicalAboutUs } from './components/ui/about-us'
 
 import "./scroll-smooth.css"
 
@@ -83,9 +84,11 @@ export default function Page() {
       document.removeEventListener('mousedown', handleClickOutside)
     }
   }, [])
+  
   const cards = data.map((card, index) => (
     <Card key={card.src} card={card} index={index} />
   ));
+  
   const data_ = [
     {
       title: "2023",
@@ -209,6 +212,7 @@ export default function Page() {
       ),
     },
   ];
+  
 
   const tabs = [
     {
@@ -321,6 +325,7 @@ export default function Page() {
 
   return (
     <>
+    
       <div className={`min-h-screen flex flex-col ${montserrat.className}`}>
         <main className="flex-grow flex flex-col items-center justify-center text-center px-4 relative">
           <div className="absolute inset-0 z-0">
@@ -347,7 +352,7 @@ export default function Page() {
                 }
               >
                 <Image
-                  src={`/images/hero2.png`}
+                  src={`/images/hero2 (1).png`}
                   alt="hero"
                   height={720}
                   width={1400}
@@ -360,8 +365,8 @@ export default function Page() {
           </div>
         </main>
       </div>
-
-      <div className="w-full pt-200vh lg:pt-[50vh]" id="#timeline">
+      <div className = "w-full pt-100vh lg:pt-[20vh]"><TechnicalAboutUs></TechnicalAboutUs></div>
+      <div className="w-full pt-100vh lg:pt-[15vh]" id="#timeline">
         <Timeline data={data_}/>
       </div>
 
@@ -382,36 +387,7 @@ export default function Page() {
         <Button variant="default" size="lg"></Button>
         <Button variant="default" size="lg"></Button>
       </div>
-      <div className="flex flex-col gap-8 items-center justify-center px-20" id="about">
-        <h1 className="text-6xl tracking-widest py-8">ABOUT <span className="text-blue-500">US</span></h1>
-        <p className="text-gray-600">STC aims to unify various technical clubs, research activities, competitions, and interdisciplinary projects, providing a platform for students to turn their innovative ideas into reality. By coordinating all technical clubs under one umbrella, STC will create a collaborative environment for budding engineers. Its mission is to enhance the technical skills and knowledge of students, fostering innovation and technological advancements through three core concepts</p>
-        <div className="w-full flex items-center gap-8">
-            <Image
-              src="/images/admin_sideview.jfif"
-              alt="Admin Sideview"
-              width={602}
-              height={421}
-              className="basis-0 grow rounded-2xl"
-            />
-            <div className="basis-0 grow">
-              <AboutCard
-                icon="bxs-group"
-                head="Learning and growing together"
-                body="STC intends to create a forum by bringing the whole students community together where students can learn, share and grow together pioneering new ideas and inventions."
-              />
-              <AboutCard
-                icon="bx-medal"
-                head="Intra college technical competition and other activities"
-                body="Organising various competitions, activities and events to nurture the growth of embryonic engineers and providing them exposure to various technical areas and competitions."
-              />
-              <AboutCard
-                icon="bx-home-circle"
-                head="Organisation of the technical clubs"
-                body="STC objectives include streamlining all the existing technical clubs as well as facilitating the establishment of the new clubs."
-              />
-            </div>
-        </div>
-      </div>
+      
       <div className="items-center justify-center text-center space-y-4 sm:space-y-0 sm:space-x-6 pt-32 pb-4"></div>
       <Footer />
     </>
