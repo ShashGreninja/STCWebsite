@@ -6,11 +6,7 @@ import { usePathname } from 'next/navigation'
 import { Home, Info, Calendar, Code, Users, ChevronDown } from 'lucide-react'
 
 const clubsList = [
-  "Robotics Club", "Coding Club", "Electronics Club", "3D Printing Club",
-  "Aeromodelling Club", "Astronomy Club", "Automobile Club", "Biotech Club",
-  "Chemical Club", "Civil Club", "Design Club", "Energy Club",
-  "Finance Club", "Gaming Club", "Literary Club", "Mathematics Club",
-  "Music Club", "Photography Club", "Quizzing Club", "Sports Club"
+    "NJACK", "MoodBoard", "AP Club", "SCME", "MATES", "ChessX", "Sparkonics", "Phoenix", "Tinkerers' Club", "ACE", "RNA Club", "Finance"
 ]
 
 export default function Navbar() {
