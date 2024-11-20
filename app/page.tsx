@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { Button } from "./components/ui/button"
 import  Link  from "next/link"
 import "boxicons/css/boxicons.min.css"
-
+import { SparklesCore } from './components/ui/celesta'
 import { ContainerScroll } from './components/ui/container-scroll-animation'
 import { Home, Info, Calendar, Users, Code ,ChevronDown} from 'lucide-react'
 import { Montserrat } from 'next/font/google'
@@ -21,7 +21,9 @@ import { motion } from "framer-motion";
 import "./scroll-smooth.css"
 import { LampContainer } from './components/ui/lamp'
 import Button1 from './components/ui/Button1'
-
+import { LayoutGrid } from './components/ui/celesta'
+import { FlipWords } from './components/ui/celesta'
+import CelestaBanner from './components/ui/banner'
 const montserrat = Montserrat({ subsets: ['latin'] })
 const clubsList = [
   "Robotics Club", "Coding Club", "Electronics Club", "3D Printing Club",
@@ -424,6 +426,12 @@ export default function Page() {
       
           </LampContainer>
     </div>
+<div><CelestaBanner
+backgroundImageUrl="/images/celesta.jpg"
+websiteUrl="https://celesta.iitp.ac.in"/>
+
+</div>
+
 
       <div className="h-[70rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl mx-auto w-full  items-start justify-start my-10" id="#team">
         <Tabs tabs={tabs} />
