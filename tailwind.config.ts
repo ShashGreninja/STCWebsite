@@ -12,7 +12,13 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      backgroundImage:{
+        "celesta " : 'url("images/hero2 (1).png")'
+      }
     },
   },
   plugins: [],
 } satisfies Config;
+
+
+
