@@ -21,16 +21,14 @@ import { motion } from "framer-motion";
 import "./scroll-smooth.css"
 import { LampContainer } from './components/ui/lamp'
 import Button1 from './components/ui/Button1'
+import { FaInstagram, FaTwitter, FaFacebook } from 'react-icons/fa';
+import { Vortex } from "../app/components/ui/vortex"
 import { LayoutGrid } from './components/ui/celesta'
 import { FlipWords } from './components/ui/celesta'
 import CelestaBanner from './components/ui/banner'
 const montserrat = Montserrat({ subsets: ['latin'] })
 const clubsList = [
-  "Robotics Club", "Coding Club", "Electronics Club", "3D Printing Club",
-  "Aeromodelling Club", "Astronomy Club", "Automobile Club", "Biotech Club",
-  "Chemical Club", "Civil Club", "Design Club", "Energy Club",
-  "Finance Club", "Gaming Club", "Literary Club", "Mathematics Club",
-  "Music Club", "Photography Club", "Quizzing Club", "Sports Club"
+  "NJACK", "MoodBoard", "AP Club", "SCME", "MATES", "ChessX", "Sparkonics", "Phoenix", "Tinkerers' Club", "ACE", "RNA Club", "Finance"
 ]
 
 function AboutCard({ icon, head, body }: { icon: string, head: string, body: string }) {
@@ -365,11 +363,11 @@ export default function Page() {
                 />
               </ContainerScroll>
             </div>
-
+                
           </div>
         </main>
       </div>
-      <div className = "w-full pt-100vh lg:pt-[20vh]"><TechnicalAboutUs></TechnicalAboutUs></div>
+      <div className = "w-full pt-200vh lg:pt-[50vh]"><TechnicalAboutUs></TechnicalAboutUs></div>
       <div className="w-full pt-100vh lg:pt-[15vh]" id="#timeline">
         <Timeline data={data_}/>
       </div>
@@ -443,7 +441,67 @@ websiteUrl="https://celesta.iitp.ac.in"/>
         <Button variant="default" size="lg"></Button>
         <Button variant="default" size="lg"></Button>
       </div>
+      <div className="items-center justify-center text-center space-y-4 sm:space-y-0 sm:space-x-6 pt-32 pb-4">
+        <Button variant="default" size="lg"></Button>
+        <Button variant="default" size="lg"></Button>
+      </div>
+     
       
+      
+      <Vortex
+        backgroundColor="black"
+        className="flex-wrap flex items-center  justify-center space-around px-2 md:px-10 py-0 w-full h-full " 
+      >
+        <h2 className="text-white text-9xl md:text-8xl font-bold text-center p-3">
+          STC<div className="text-5xl md:text-2xl">IIT P</div> 
+        </h2>
+        <p className="text-white text-sm md:text-l max-w-xl mt-6 text-center p-14">
+        The council of Student's Gymkhana to nurture the advancement of technical culture of Indian Institute of Technology, Patna.
+        <br />© Copyright Student Technical Council, IITP.  
+        <br />             
+        </p>
+        
+        
+        <div className="flex justify-center space-x-4 text-[#e6e6e6] m-12">
+      {/* Instagram */}
+      <img width="80vw" src="/images/download.png" alt="IITP gymkhana"></img> 
+      <a
+        href="https://www.instagram.com/iitpatna_stc/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:text-pink-500"
+      >
+        <FaInstagram size={24} />
+      </a>
+
+      {/* Twitter */}
+      <a
+        href="https://twitter.com/stc_iitp"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:text-blue-400"
+      >
+        <FaTwitter size={24} />
+      </a>
+
+      {/* Facebook */}
+      <a
+        href="https://www.facebook.com/stc.iitp/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:text-blue-600"
+      >
+        <FaFacebook size={24} />
+      </a>
+    </div>
+        <div className="w-full sm:w-auto flex justify-center">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3600.0697031196537!2d84.8513104!3d25.536054999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398d5700288d5577%3A0xb87d51692f417876!2sStudent&#39;s%20Technical%20Council%20Office!5e0!3m2!1sen!2sin!4v1732065303619!5m2!1sen!2sin"
+          allowFullScreen
+          className="w-[150px] h-[100px] md:w-[300px] md:h-[200px] "
+          style={{ border: 0 }}
+        ></iframe></div>
+      </Vortex>
       
     </>
   )
