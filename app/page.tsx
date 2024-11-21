@@ -434,7 +434,7 @@ websiteUrl="https://celesta.iitp.ac.in"/>
         <Button variant="default" size="lg"></Button>
       </div>
 
-      <div className="h-[70rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl mx-auto w-full  items-start justify-start my-10" id="#team">
+      <div className="h-[70rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl mx-auto w-full  items-start justify-start my-4" id="#team">
         <Tabs tabs={tabs} />
       </div>
 
@@ -457,7 +457,7 @@ websiteUrl="https://celesta.iitp.ac.in"/>
         <p className="text-white text-sm md:text-l max-w-xl mt-6 text-center p-14">
         The council of Student's Gymkhana to nurture the advancement of technical culture of Indian Institute of Technology, Patna.
         <br />© Copyright Student Technical Council, IITP.  
-        <br />             
+        <br />Contact us at stc@iitp.ac.in ; gensec_tech@iitp.ac.in             
         </p>
         
         
@@ -551,32 +551,52 @@ const data = [
     category: "NJACK",
     title: "NSoC Game Jam",
     src: "/images/NJACK.png",
-    content: "",
+    content: <ul><li>Competition</li>
+    <li>01/07/2024</li>
+    <li>No Time</li>
+    <li>Venue not decided</li>
+    <li>No Description</li></ul>,
   },
   {
     category: "NJACK",
     title: "NSoC Animation Challenge",
     src: "/images/NJACK.png",
-    content:  "",
+    content:  <ul><li>Competition</li>
+    <li>09/07/2024</li>
+    <li>No Time</li>
+    <li>Venue not decided</li>
+    <li>No Description</li></ul>,
   },
 
   {
     category: "Sparkonics",
     title: "Electrivia - v1.0",
     src: "/images/Sparkonics.png",
-    content: "",
+    content: <ul><li>Quiz</li>
+    <li>09/07/2024</li>
+    <li>No Time</li>
+    <li>General Knowledge related quizzes to improve the grip</li>
+    <li>All Day</li></ul>,
   },
   {
     category: "NJACK",
     title: "NSoC Design Challenge",
     src: "/images/NJACK.png",
-    content: "",
+    content: <ul><li>Competition</li>
+    <li>16/07/2024</li>
+    <li>No Time</li>
+    <li>Venue not decided</li>
+    <li>All Day</li></ul>,
   },
   {
     category: "Moodboard",
     title: "Inter IIT Orientation",
     src: "/images/MoodBoard.png",
-    content: "",
+    content: <ul><li>Seminar</li>
+    <li>18/08/2024</li>
+    <li>No Time</li>
+    <li>Venue not decided</li>
+    <li>5-7 PM</li></ul>,
   },
 ];
 

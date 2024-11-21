@@ -1,7 +1,7 @@
 import React from 'react'
 import { Code, Cpu, Zap, Users } from 'lucide-react'
 
-const FeatureCard = ({ title, description, icon: Icon }) => (
+const FeatureCard= ({ title, description, icon: Icon }) => (
   <div className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg p-6 rounded-lg transform transition-all duration-300 hover:scale-105 hover:bg-opacity-20">
     <Icon className="w-12 h-12 mb-4 text-blue-400" />
     <h3 className="text-xl font-semibold mb-2">{title}</h3>
@@ -53,11 +53,11 @@ export function TechnicalAboutUs() {
 
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div className="bg-white/5 backdrop-blur-sm p-6 rounded-lg">
-            <div className="text-4xl font-bold text-blue-400 mb-2">20+</div>
-            <div className="text-gray-400">Years Experience</div>
+            <div className="text-4xl font-bold text-blue-400 mb-2">10+</div>
+            <div className="text-gray-400">Years since Inception</div>
           </div>
           <div className="bg-white/5 backdrop-blur-sm p-6 rounded-lg">
-            <div className="text-4xl font-bold text-blue-400 mb-2">1000+</div>
+            <div className="text-4xl font-bold text-blue-400 mb-2">100+</div>
             <div className="text-gray-400">Projects Done</div>
           </div>
           <div className="bg-white/5 backdrop-blur-sm p-6 rounded-lg">
@@ -65,7 +65,7 @@ export function TechnicalAboutUs() {
             <div className="text-gray-400">Active Members</div>
           </div>
           <div className="bg-white/5 backdrop-blur-sm p-6 rounded-lg">
-            <div className="text-4xl font-bold text-blue-400 mb-2">50+</div>
+            <div className="text-4xl font-bold text-blue-400 mb-2">Multiple</div>
             <div className="text-gray-400">Awards Won</div>
           </div>
         </div>
