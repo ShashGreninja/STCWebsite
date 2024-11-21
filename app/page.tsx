@@ -41,7 +41,7 @@ function AboutCard({ icon, head, body }: { icon: string, head: string, body: str
           {head}
         </div>
       </button>
-      { show && <p>{body}</p> }
+      { show && <div>{body}</div> }
       <hr />
     </div>
   )
@@ -230,9 +230,9 @@ export default function Page() {
             key={"dummy-content" + index}
             className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
           >
-            <p>
+            <div>
             <AnimatedTestimonials testimonials={testimonials1}/>
-            </p>
+            </div>
             
           </div>
         );
@@ -254,9 +254,9 @@ export default function Page() {
             key={"dummy-content" + index}
             className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
           >
-            <p>
+            <div>
             <AnimatedTestimonials testimonials={testimonials2}/>
-            </p>
+            </div>
             
           </div>
         );
@@ -278,9 +278,9 @@ export default function Page() {
             key={"dummy-content" + index}
             className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
           >
-            <p>
+            <div>
             <AnimatedTestimonials testimonials={testimonials3}/>
-            </p>
+            </div>
             
           </div>
         );
@@ -302,9 +302,9 @@ export default function Page() {
             key={"dummy-content" + index}
             className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
           >
-            <p>
+            <div>
             <AnimatedTestimonials testimonials={testimonials4}/>
-            </p>
+            </div>
             
           </div>
         );
