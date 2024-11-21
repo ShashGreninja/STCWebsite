@@ -23,7 +23,7 @@ export const Vortex = (props: VortexProps) => {
   const particleCount = props.particleCount || 700;
   const particlePropCount = 9;
   const particlePropsLength = particleCount * particlePropCount;
-  const rangeY = props.rangeY || 100;
+  const rangeY = props.rangeY || 50;
   const baseTTL = 50;
   const rangeTTL = 150;
   const baseSpeed = props.baseSpeed || 0.0;
@@ -36,7 +36,7 @@ export const Vortex = (props: VortexProps) => {
   const xOff = 0.00125;
   const yOff = 0.00125;
   const zOff = 0.0005;
-  const backgroundColor = props.backgroundColor || "#000000";
+  const backgroundColor = props.backgroundColor || "red";
   let tick = 0;
   const noise3D = createNoise3D();
   let particleProps = new Float32Array(particlePropsLength);
@@ -192,10 +192,10 @@ export const Vortex = (props: VortexProps) => {
     const { innerWidth, innerHeight } = window;
 
     canvas.width = innerWidth;
-    canvas.height = innerHeight;
+    canvas.height = innerHeight/3;
 
-    center[0] = 0.5 * canvas.width;
-    center[1] = 0.5 * canvas.height;
+    center[0] = 0.4 * canvas.width;
+    center[1] = 0.4 * canvas.height;
   };
 
   const renderGlow = (
