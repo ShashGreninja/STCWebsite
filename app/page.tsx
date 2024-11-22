@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { Button } from "./components/ui/button"
 import  Link  from "next/link"
 import "boxicons/css/boxicons.min.css"
-import { SparklesCore } from './components/ui/celesta'
+// import { SparklesCore } from './components/ui/celesta'
 import { ContainerScroll } from './components/ui/container-scroll-animation'
 import { Home, Info, Calendar, Users, Code ,ChevronDown} from 'lucide-react'
 import { Montserrat } from 'next/font/google'
@@ -23,7 +23,7 @@ import { LampContainer } from './components/ui/lamp'
 import Button1 from './components/ui/Button1'
 import { FaInstagram, FaTwitter, FaFacebook } from 'react-icons/fa';
 import { Vortex } from "../app/components/ui/vortex"
-import { LayoutGrid } from './components/ui/celesta'
+// import { LayoutGrid } from './components/ui/celesta'
 import { FlipWords } from './components/ui/celesta'
 import CelestaBanner from './components/ui/banner'
 const montserrat = Montserrat({ subsets: ['latin'] })
@@ -41,7 +41,7 @@ function AboutCard({ icon, head, body }: { icon: string, head: string, body: str
           {head}
         </div>
       </button>
-      { show && <p>{body}</p> }
+      { show && <div>{body}</div> }
       <hr />
     </div>
   )
@@ -230,9 +230,9 @@ export default function Page() {
             key={"dummy-content" + index}
             className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
           >
-            <p>
+            <div>
             <AnimatedTestimonials testimonials={testimonials1}/>
-            </p>
+            </div>
             
           </div>
         );
@@ -254,9 +254,9 @@ export default function Page() {
             key={"dummy-content" + index}
             className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
           >
-            <p>
+            <div>
             <AnimatedTestimonials testimonials={testimonials2}/>
-            </p>
+            </div>
             
           </div>
         );
@@ -278,9 +278,9 @@ export default function Page() {
             key={"dummy-content" + index}
             className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
           >
-            <p>
+            <div>
             <AnimatedTestimonials testimonials={testimonials3}/>
-            </p>
+            </div>
             
           </div>
         );
@@ -302,9 +302,9 @@ export default function Page() {
             key={"dummy-content" + index}
             className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
           >
-            <p>
+            <div>
             <AnimatedTestimonials testimonials={testimonials4}/>
-            </p>
+            </div>
             
           </div>
         );
@@ -354,11 +354,11 @@ export default function Page() {
                 }
               >
                 <Image
-                  src={`/images/hero2 (1).png`}
+                  src={`/images/image.png`}
                   alt="hero"
                   height={720}
-                  width={1400}
-                  className="mx-auto rounded-2xl object-cover h-full object-left-top"
+                  width={1440}
+                  className="mx-auto rounded-2xl object-fill h-full object-left-top"
                   draggable={false}
                 />
               </ContainerScroll>
@@ -429,9 +429,12 @@ backgroundImageUrl="/images/celesta.jpg"
 websiteUrl="https://celesta.iitp.ac.in"/>
 
 </div>
+<div className="items-center justify-center text-center space-y-4 sm:space-y-0 sm:space-x-6 pt-32 pb-4">
+        <Button variant="default" size="lg"></Button>
+        <Button variant="default" size="lg"></Button>
+      </div>
 
-
-      <div className="h-[70rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl mx-auto w-full  items-start justify-start my-10" id="#team">
+      <div className="h-[70rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl mx-auto w-full  items-start justify-start my-4" id="#team">
         <Tabs tabs={tabs} />
       </div>
 
@@ -441,16 +444,12 @@ websiteUrl="https://celesta.iitp.ac.in"/>
         <Button variant="default" size="lg"></Button>
         <Button variant="default" size="lg"></Button>
       </div>
-      <div className="items-center justify-center text-center space-y-4 sm:space-y-0 sm:space-x-6 pt-32 pb-4">
-        <Button variant="default" size="lg"></Button>
-        <Button variant="default" size="lg"></Button>
-      </div>
      
       
       
       <Vortex
-        backgroundColor="black"
-        className="flex-wrap flex items-center  justify-center space-around px-2 md:px-10 py-0 w-full h-full " 
+        backgroundColor="rgb(1,1,1)"
+        className="flex-wrap flex items-center  justify-center space-around px-2 md:px-10 py-2 w-full h-full relative bottom" 
       >
         <h2 className="text-white text-9xl md:text-8xl font-bold text-center p-3">
           STC<div className="text-5xl md:text-2xl">IIT P</div> 
@@ -458,7 +457,7 @@ websiteUrl="https://celesta.iitp.ac.in"/>
         <p className="text-white text-sm md:text-l max-w-xl mt-6 text-center p-14">
         The council of Student's Gymkhana to nurture the advancement of technical culture of Indian Institute of Technology, Patna.
         <br />© Copyright Student Technical Council, IITP.  
-        <br />             
+        <br />Contact us at stc@iitp.ac.in ; gensec_tech@iitp.ac.in             
         </p>
         
         
@@ -552,32 +551,52 @@ const data = [
     category: "NJACK",
     title: "NSoC Game Jam",
     src: "/images/NJACK.png",
-    content: "",
+    content: <ul><li>Competition</li>
+    <li>01/07/2024</li>
+    <li>No Time</li>
+    <li>Venue not decided</li>
+    <li>No Description</li></ul>,
   },
   {
     category: "NJACK",
     title: "NSoC Animation Challenge",
     src: "/images/NJACK.png",
-    content:  "",
+    content:  <ul><li>Competition</li>
+    <li>09/07/2024</li>
+    <li>No Time</li>
+    <li>Venue not decided</li>
+    <li>No Description</li></ul>,
   },
 
   {
     category: "Sparkonics",
     title: "Electrivia - v1.0",
     src: "/images/Sparkonics.png",
-    content: "",
+    content: <ul><li>Quiz</li>
+    <li>09/07/2024</li>
+    <li>No Time</li>
+    <li>General Knowledge related quizzes to improve the grip</li>
+    <li>All Day</li></ul>,
   },
   {
     category: "NJACK",
     title: "NSoC Design Challenge",
     src: "/images/NJACK.png",
-    content: "",
+    content: <ul><li>Competition</li>
+    <li>16/07/2024</li>
+    <li>No Time</li>
+    <li>Venue not decided</li>
+    <li>All Day</li></ul>,
   },
   {
     category: "Moodboard",
     title: "Inter IIT Orientation",
     src: "/images/MoodBoard.png",
-    content: "",
+    content: <ul><li>Seminar</li>
+    <li>18/08/2024</li>
+    <li>No Time</li>
+    <li>Venue not decided</li>
+    <li>5-7 PM</li></ul>,
   },
 ];
 

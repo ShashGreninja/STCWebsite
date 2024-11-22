@@ -26,6 +26,7 @@ type Card = {
   title: string;
   category: string;
   content: React.ReactNode;
+  
 };
 
 export const CarouselContext = createContext<{
@@ -157,10 +158,12 @@ export const Card = ({
   card,
   index,
   layout = false,
+  
 }: {
   card: Card;
   index: number;
   layout?: boolean;
+  onClose?: () =>void
 }) => {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
