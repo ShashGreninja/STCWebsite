@@ -116,13 +116,12 @@ export default function Navbar() {
                 <div className="absolute top-full right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 overflow-hidden z-30">
                   <div className="py-1 max-h-96 overflow-y-auto">
                     {clubsList.map((club) => (
-                      <button
+                      <Link href={`/clubs/${club.name}`}
                         key={club.name}
                         className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 text-gray-700 hover:text-gray-900"
-                        onClick={() => handleClubClick(club)}
                       >
                         {club.name}
-                      </button>
+                      </Link>
                     ))}
                   </div>
                 </div>
