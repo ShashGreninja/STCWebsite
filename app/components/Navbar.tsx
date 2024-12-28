@@ -66,6 +66,21 @@ export default function Navbar() {
     setSelectedClub(null) // Reset the selected club
   }
 
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // Only handle hash links
+    if (href.startsWith('/#')) {
+      e.preventDefault();
+      const targetId = href.replace('/#', '');
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
+    }
+  };
+
   return (
     <>
       <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-20 backdrop-blur-lg shadow-lg rounded-full z-20">
@@ -84,6 +99,7 @@ export default function Navbar() {
               <li key={item.name}>
                 <Link
                   href={item.href}
+                  onClick={(e) => handleScroll(e, item.href)}
                   target={item.href.startsWith('http') ? "_blank" : undefined}
                   rel={item.href.startsWith('http') ? "noopener noreferrer" : undefined}
                   className={`flex items-center space-x-1 p-2 rounded-full transition-colors ${
@@ -113,15 +129,16 @@ export default function Navbar() {
                 <ChevronDown className="w-5 h-5" />
               </button>
               {isClubsOpen && (
-                <div className="absolute top-full right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 overflow-hidden z-30">
+                <div className="absolute top-full right-0 mt-2 w-56 rounded-md shadow-lg bg-[#0A0A0A] ring-1 ring-white/10 overflow-hidden z-30">
                   <div className="py-1 max-h-96 overflow-y-auto">
                     {clubsList.map((club) => (
-                      <Link href={`/clubs/${club.name.toLowerCase()}`}
+                      <button
                         key={club.name}
-                        className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 text-gray-700 hover:text-gray-900"
+                        onClick={() => handleClubClick(club)}
+                        className="block w-full text-left px-4 py-2 text-sm text-gray-200 hover:bg-white/10 transition-colors"
                       >
                         {club.name}
-                      </Link>
+                      </button>
                     ))}
                   </div>
                 </div>
@@ -134,20 +151,19 @@ export default function Navbar() {
       {/* Render the card for the selected club */}
       <AnimatePresence>
         {selectedClub && (
-          // <div className= "fixed inset-0 z-50">
-          <Card
-            card={{
-              title: selectedClub.name,
-              category: selectedClub.category,
-              content: selectedClub.content,
-              src: selectedClub.src,
-              
-            }}
-            index={0}
-            layout={false}
-            onClose={() => setSelectedClub(null)}
-          />
-          // </div>
+          <div className="fixed inset-0 z-50">
+            <Card
+              card={{
+                title: selectedClub.name,
+                category: selectedClub.category,
+                content: selectedClub.content,
+                src: selectedClub.src
+              }}
+              index={0}
+              layout={false}
+              onClose={() => setSelectedClub(null)}
+            />
+          </div>
         )}
       </AnimatePresence>
     </>

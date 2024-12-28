@@ -367,12 +367,12 @@ export default function Page() {
           </div>
         </main>
       </div>
-      <div className = "w-full pt-200vh lg:pt-[50vh]"><TechnicalAboutUs></TechnicalAboutUs></div>
-      <div className="w-full pt-100vh lg:pt-[15vh]" id="#timeline">
+      <div id="about" className="w-full pt-200vh lg:pt-[50vh]"><TechnicalAboutUs></TechnicalAboutUs></div>
+      <div id="timeline" className="w-full pt-100vh lg:pt-[15vh]">
         <Timeline data={data_}/>
       </div>
 
-      <div className="w-full h-full py-20" id="#events">
+      <div id="events" className="w-full h-full py-20">
         <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
           STC Events
         </h2>
@@ -401,7 +401,7 @@ export default function Page() {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-7xl font-medium tracking-tight text-transparent md:text-9xl pt-1"
+        className="mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-1 bg-clip-text text-center text-7xl font-medium tracking-tight text-transparent md:text-9xl pt-1"
       >
         O N E I I T P
         
@@ -434,7 +434,7 @@ websiteUrl="https://celesta.iitp.ac.in"/>
         <Button variant="default" size="lg"></Button>
       </div>
 
-      <div className="h-[70rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl mx-auto w-full  items-start justify-start my-4" id="#team">
+      <div id="team" className="h-[70rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl mx-auto w-full  items-start justify-start my-4">
         <Tabs tabs={tabs} />
       </div>
 
