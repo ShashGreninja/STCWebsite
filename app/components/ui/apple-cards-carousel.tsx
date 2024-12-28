@@ -154,19 +154,17 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
   );
 };
 
-type CardProps = {
-  card: Card;
-  index: number;
-  layout?: boolean;
-  onClose?: () => void;
-}
-
 export const Card = ({
   card,
   index,
   layout = false,
-  onClose
-}: CardProps) => {
+  
+}: {
+  card: Card;
+  index: number;
+  layout?: boolean;
+  onClose?: () =>void
+}) => {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const { onCardClose, currentIndex } = useContext(CarouselContext);
@@ -196,7 +194,6 @@ export const Card = ({
 
   const handleClose = () => {
     setOpen(false);
-    onClose?.(); // Call onClose if provided
     onCardClose(index);
   };
 

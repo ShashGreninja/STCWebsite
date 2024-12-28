@@ -34,36 +34,11 @@ const clubsList: Club[] = [
 ]
 
 export default function Navbar() {
-  const [isClubsOpen, setIsClubsOpen] = useState(false)
-  const [selectedClub, setSelectedClub] = useState<Club | null>(null) // Specify type as Club or null
-  const dropdownRef = useRef<HTMLLIElement>(null)
   const pathname = usePathname()
-
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsClubsOpen(false)
-      }
-    }
-
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [])
 
   const isActive = (href: string) => {
     if (href === '/') return pathname === href
     return pathname.startsWith(href)
-  }
-
-  const handleClubClick = (club: Club) => {
-    setSelectedClub(club) // Set the selected club
-    setIsClubsOpen(false) // Close dropdown
-  }
-
-  const handleCloseCard = () => {
-    setSelectedClub(null) // Reset the selected club
   }
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -94,7 +69,9 @@ export default function Navbar() {
               { name: 'About', icon: Info, href: "/#about" },
               { name: 'Events', icon: Calendar, href: "/#events" },
               { name: 'Tech Season', icon: Code, href: 'https://stc.iitp.ac.in/techseason/index.html' },
-              { name: 'Team', icon: Users, href: "/#team" }
+              { name: 'Clubs', icon: Users, href: "/#clubs" },
+              { name: 'Team', icon: Users, href: "/#team" },
+               // Added Clubs button
             ].map((item) => (
               <li key={item.name}>
                 <Link
@@ -111,61 +88,9 @@ export default function Navbar() {
                 </Link>
               </li>
             ))}
-            <li
-              className="relative"
-              ref={dropdownRef}
-              onMouseEnter={() => setIsClubsOpen(true)}
-              onMouseLeave={() => setIsClubsOpen(false)}
-            >
-              <button
-                className={`flex items-center space-x-1 p-2 rounded-full transition-colors ${
-                  pathname.startsWith('/clubs') ? 'bg-white text-black' : 'text-white hover:bg-white/10'
-                }`}
-                onClick={() => setIsClubsOpen(!isClubsOpen)}
-                aria-expanded={isClubsOpen}
-                aria-haspopup="true"
-              >
-                <span className="hidden sm:inline">Clubs</span>
-                <ChevronDown className="w-5 h-5" />
-              </button>
-              {isClubsOpen && (
-                <div className="absolute top-full right-0 mt-2 w-56 rounded-md shadow-lg bg-[#0A0A0A] ring-1 ring-white/10 overflow-hidden z-30">
-                  <div className="py-1 max-h-96 overflow-y-auto">
-                    {clubsList.map((club) => (
-                      <button
-                        key={club.name}
-                        onClick={() => handleClubClick(club)}
-                        className="block w-full text-left px-4 py-2 text-sm text-gray-200 hover:bg-white/10 transition-colors"
-                      >
-                        {club.name}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </li>
           </ul>
         </div>
       </nav>
-
-      {/* Render the card for the selected club */}
-      <AnimatePresence>
-        {selectedClub && (
-          <div className="fixed inset-0 z-50">
-            <Card
-              card={{
-                title: selectedClub.name,
-                category: selectedClub.category,
-                content: selectedClub.content,
-                src: selectedClub.src
-              }}
-              index={0}
-              layout={false}
-              onClose={() => setSelectedClub(null)}
-            />
-          </div>
-        )}
-      </AnimatePresence>
     </>
   )
 }

@@ -90,6 +90,10 @@ export default function Page() {
   const cards = data.map((card, index) => (
     <Card key={card.src} card={card} index={index} />
   ));
+
+  const clubcards = clubdata.map((card, index) => (
+    <Card key={card.src} card={card} index={index} />
+  ));
   
   const data_ = [
     {
@@ -429,16 +433,27 @@ backgroundImageUrl="/images/celesta.jpg"
 websiteUrl="https://celesta.iitp.ac.in"/>
 
 </div>
-<div className="items-center justify-center text-center space-y-4 sm:space-y-0 sm:space-x-6 pt-32 pb-4">
-        <Button variant="default" size="lg"></Button>
-        <Button variant="default" size="lg"></Button>
+
+<div id="clubs" className="w-full h-full py-20">
+        <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
+          STC Clubs
+        </h2>
+        <Carousel items={clubcards} />
       </div>
+      
+{/* <div className="items-center justify-center text-center space-y-4 sm:space-y-0 sm:space-x-6 pt-32 pb-4">
+        <Button variant="default" size="lg"></Button>
+        <Button variant="default" size="lg"></Button>
+      </div> */}
 
       <div id="team" className="h-[70rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl mx-auto w-full  items-start justify-start my-4">
         <Tabs tabs={tabs} />
       </div>
 
-      
+      <div className="items-center justify-center text-center space-y-4 sm:space-y-0 sm:space-x-6 pt-32 pb-4">
+       
+        
+      </div>
 
       <div className="items-center justify-center text-center space-y-4 sm:space-y-0 sm:space-x-6 pt-32 pb-4">
         <Button variant="default" size="lg"></Button>
@@ -535,6 +550,23 @@ const DummyContent = () => {
     </>
   );
 };
+
+const clubdata = [
+  { title: "NJACK", category: "Coding", content: "NJACK is the coding club of IIT Patna. We aim to flourish a group of hardcore coding enthusiasts through productive sessions and fun events. We will continue the legacy of unconditionally guiding fellow students of the IIT Patna fraternity across the various domains of Computer Science.", src: "/images/NJACK.png" },
+  { title: "MoodBoard", category: "Design", content: "MoodBoard Design Club at IIT Patna is a dynamic community that fosters creativity and design skills among students. Throughout the year, the club engages in various workshops, collaborative projects, and exhibitions to enhance members' visual communication and design thinking abilities. The club serves as a platform for students to explore various facets of design, from graphic design and photo manipulation to 3D animation and user experience design.", src: "/images/MoodBoard.png" },
+  { title: "AP Club", category: "Physics", content: "Astronomy and Particle Physics (AP) Club is a team of enthusiastic people who share a common goal of exploring, studying, and experimenting with a wide variety of Astronomy and Particle Physics related topics, facts, and new discoveries. We have been trying to make people aware of scintillating stuff right from the nano-level world to the vastness of the cosmos!", src: "/images/APC.png"},
+  { title: "SCME", category: "Mechanical engineering", content: "SCME was founded with the motive of engaging and encouraging Mechanical Engineering discipline related activities in IIT Patna. Since its inception, SCME has been conducting events, lectures and workshops round the year for the benefit of mechanical engineering students.", src: "/images/scmelogo.jpg" },
+  { title: "MaTES", category: "Materials and Metallurgy", content: "MaTES is a combined step of students and faculty of IIT PATNA to create an environment of inquisitiveness about metallurgy and materials through various interesting events, informative workshops and inquisitive guest lectures. Our organization's aim is to promote creativity, potency, morals in students and boost awareness about materials in the society.", src: "/images/MaTESlogo.png" },
+  { title: "ChessX", category: "Chemical Engineering", content: "ChESSx aims at providing the needed support to produce the best chemical engineering graduates of tomorrow. It aims at making the students familiar with the scientific and industrial know-how and well equipping them to handle real-world problems so that they can better adapt themselves at their workplace once they graduate.", src: "/images/ChESSxLogo.jpg" },
+  { title: "Sparkonics", category: "Electronics", content: "Sparkonics is the Electrical engineering society of IIT Patna which aims to make students aware and better equipped to handle real world problems related to Electrical engineering and related interdisciplinary fields by the means of projects and various workshops and guest lectures.", src: "/images/Sparkonics.png" },
+  { title: "Phoenix", category: "Robotics", content: "Team Phoenix IIT Patna is the official robotics contingent of IIT Patna in ABU Robocon. We seek passionate individuals and offer diverse learning opportunities in robotics through workshops, hackathons, and mentorship programs, including participation in the MathWorks Simulation contest.", src: "/images/phoenix.jpg" },
+  { title: "Tinkerers' Club", category: "Innovation", content: "Tinkerer's Lab at IIT Patna allows you to build things on your own, from scratch. This gives you practical and hands-on experience. The lab is almost entirely student run.The lack of deadlines and pressure allows you to tinker and develop your ideas with full freedom.", src: "/images/tinkerers.png" },
+  { title: "ACE", category: "Civil Engineering", content: "The Association of Civil Engineers is an official club of the Department of Civil and Environmental Engineering at IIT Patna. It aims to facilitate student-faculty interaction, provide a platform for showcasing work and knowledge, and enhance abilities through workshops and events.", src: "/images/ACElogo.png" },
+  { title: "RNA Club", category: "Robotics and Aviation", content: "RnA or Robotics and Aviation Club of IIT Patna is a newly formed club that focuses on drones, MAVs (Micro air Vehicles), and aviation robotics. Here in RnA club, we all are family without any partiality.", src: "/images/RnAlogo.png" },
+  { title: "TIC", category: "Finance", content: "The Trading and Investment Club at IIT Patna is rapidly growing and emphasizes consulting, investing, marketing, and product management. With a focus on winning competitions, creating opportunities, and skill-building, the club aims to establish a lasting finance legacy and become a top student-run club in India.", src: "/images/TIClogo.jpg" },
+  { title: "Ecell", category: "Enterpreneurship", content: "Welcome to the Entrepreneurship Cell (E-Cell) at IIT Patna, a vibrant community dedicated to fostering innovation, entrepreneurship, and leadership among students. Our mission is to inspire and empower the next generation of entrepreneurs by providing them with the resources, mentorship, and opportunities needed to turn their ideas into successful ventures.", src: "/images/ecelllogo.jpg" },
+  { title: "MotorSports", category: "Automobiles and motorsports", content: "Welcome to Motorsports IITP, the premier club for automobile enthusiasts and aspiring engineers at IIT Patna! Our club is dedicated to fostering a passion for motorsports and providing hands-on experience in automotive engineering, design, and innovation.", src: "/images/motorsportslogo.png" }
+]
 
 const data = [
   {
