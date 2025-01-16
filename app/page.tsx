@@ -26,8 +26,95 @@ import { Vortex } from "../app/components/ui/vortex"
 // import { LayoutGrid } from './components/ui/celesta'
 import { FlipWords } from './components/ui/celesta'
 import CelestaBanner from './components/ui/banner'
+const njackCoordinators = ["IMG_9007 - Krishna Keshav Singh.jpeg",
+,"jatin - vinayak goyal.jpg"
+,"kanahia - vinayak goyal.jpg"
+,"krishna_rathore - vinayak goyal.jpg"
+,"kushal_agarwal - vinayak goyal.jpg"
+,"PratikAmrit - Pratik Amrit.png"
+,"s_akash - vinayak goyal.jpg"
+,"satyam_raj - vinayak goyal.jpg"
+,"Vinayak_goyal - vinayak goyal.jpg"]
+const moodboardCoordinators = ["Kunjal - Swastik Vishwakarma.jpg",
+"Swastik - Swastik Vishwakarma.jpg",
+]
+const apcCoordinators = [
+  //"Harsh_Dahiya(Education and Outreach) - Khushal yadav.jpg",
+"Khushal_Yadav - Khushal yadav.jpg",
+"Priyanshi Sharma - Khushal yadav.jpg",
+"Subham Prasad Gouda - Khushal yadav.jpg",
+"Suprajit - Khushal yadav.jpg",
+"Utkarsh Arya - Khushal yadav.jpg",
+]
+const scmeCoordinators = ["pulah - Pulah Panara.jpg",
+"rahul - Pulah Panara.png",
+]
+const matesCoordinators = ["Aman - Subham Prasad Gouda.jpg",
+"Anurag - Subham Prasad Gouda.jpg",
+"IMG-20250104-WA0030 - Subham Prasad Gouda.jpg",
+"Kaustubh - Subham Prasad Gouda.JPG",
+"Manoj - Subham Prasad Gouda.jpg",
+"Nishant - Subham Prasad Gouda.jpg",
+"Picsart_24-06-03_16-46-23-963 - Subham Prasad Gouda.jpg",
+"Yeshwanth - Subham Prasad Gouda.JPG",
+]
+const chessxCoordinators = ["Abhinav_Events - Rishu Kumar Singh.jpeg",
+"Aman_MPR - Rishu Kumar Singh.jpeg",
+"Luqman_Overall - Rishu Kumar Singh.jpeg",
+"Mohit_WebDev - Rishu Kumar Singh.jpeg",
+"Rajveer_Project - Rishu Kumar Singh.jpeg",
+"Sanchay_Overall - Rishu Kumar Singh.jpeg",
+"Sandhya_UID - Rishu Kumar Singh.jpeg",
+]
+const sparkonicsCoordinators = ["ADITYA - Rupesh Kumar.jpeg",
+"ANIT - Rupesh Kumar.jpeg",
+"RUPESH - Rupesh Kumar.jpeg",
+"SAMPATH - Rupesh Kumar.jpeg",
+]
+const phoenixCoordinators = ["Screenshot_20241231_193829_WhatsApp - Ashwani Kumar Jha.jpg",
+]
+const tinkererslabCoordinators = ["Ish_Kapoor - Ish Kapoor.jpg",
+"Shreya_Reddy - Ish Kapoor.jpg",
+]
+const aceCoordinators = ["Awani Sriharsh - Deepak Patel.jpg",
+"Ayushman - Deepak Patel.jpg",
+"DEEPAK PATEL - Deepak Patel.JPG",
+"Mohit - Deepak Patel.jpg",
+"PRIYADARSHNI SINHA - Deepak Patel.jpg",
+"Rohit - Deepak Patel.jpg",
+"Sakshi Priya - Deepak Patel.jpg",
+"Sohum Bansal - Deepak Patel.jpg",
+"SUMIT SUHAN - Deepak Patel.jpg",
+]
+const rnaclubCoordinators = ["Ankit_Singh - Ankit Singh.jpg",
+"LAXMI - Ankit Singh.png",
+"Tanishk - Ankit Singh.jpg",
+]
+const ticCoordinators = ["IMG20240811143936 - Dharmraj Dhaker.jpg",
+"IMG-20240828-WA0014 - Dharmraj Dhaker.jpg",
+"IMG20241212134646 - Dharmraj Dhaker.jpg",
+"IMG20241212134656 - Dharmraj Dhaker.jpg",
+]
+const ecellCoordinators = ["Gaurav Kumar - Tanay Chhajed.jpg",
+"Harsh - Tanay Chhajed.jpg",
+"Kushal - Tanay Chhajed.jpg",
+"Manas - Tanay Chhajed.jpg",
+"Mayank - Tanay Chhajed.jpg",
+"Nalin - Tanay Chhajed.JPG",
+"Raunak - Tanay Chhajed.jpg",
+"Rudra - Tanay Chhajed.jpg",
+"Saumya_Jain - Tanay Chhajed.jpg",
+"Tanay - Tanay Chhajed.jpg",
+]
+const quantumtechCoordinators = ["Aryan - Suprajit Dewanji.jpg",
+"Krishnakant - Suprajit Dewanji.png",
+"Nishant - Suprajit Dewanji.jpg",
+"Sukrit - Suprajit Dewanji.jpg",
+"Suprajit - Suprajit Dewanji.jpg",
+]
 const montserrat = Montserrat({ subsets: ['latin'] })
-const clubsList = [
+
+/*const clubsList = [
   "NJACK", "MoodBoard", "AP Club", "SCME", "MATES", "ChessX", "Sparkonics", "Phoenix", "Tinkerers' Club", "ACE", "RNA Club", "Finance"
 ]
 
@@ -67,10 +154,10 @@ function Footer() {
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3600.0697031196537!2d84.8513104!3d25.536054999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398d5700288d5577%3A0xb87d51692f417876!2sStudent&#39;s%20Technical%20Council%20Office!5e0!3m2!1sen!2sin!4v1732044561583!5m2!1sen!2sin" allowFullScreen className="w-[300px] h-[200px] sm:w-[400px] sm:h-[300px]" style={{ border: 0 }}></iframe>
     </div>
   )
-}
+}*/
 
 export default function Page() {
-  const [activeTab, setActiveTab] = useState('home')
+  //const [activeTab, setActiveTab] = useState('home')
   const [isClubsOpen, setIsClubsOpen] = useState(false)
   const dropdownRef = useRef<HTMLLIElement>(null)
 
@@ -521,7 +608,7 @@ export default function Page() {
 }
 
 
-const DummyContent = () => {
+/*const DummyContent = () => {
   return (
     <>
       {[...new Array(3).fill(1)].map((_, index) => {
@@ -548,7 +635,7 @@ const DummyContent = () => {
       })}
     </>
   );
-};
+};*/
 
 const clubdata = [
   {
@@ -559,11 +646,8 @@ const clubdata = [
         <p>
           NJACK is the coding club of IIT Patna. We aim to flourish a group of hardcore coding enthusiasts through productive sessions and fun events. We will continue the legacy of unconditionally guiding fellow students of the IIT Patna fraternity across the various domains of Computer Science.
         </p>
-        <div style={{ marginTop: '20px' }}>
-          <img src="/images/dummy1.jpg" alt="Dummy Image 1" />
-          <p>Caption for Dummy Image 1</p>
-          <img src="/images/dummy2.jpg" alt="Dummy Image 2" />
-          <p>Caption for Dummy Image 2</p>
+        <div className="flex flex-wrap mt-[20px]">
+        {njackCoordinators.map(src => <div className="md:basis-1/2 lg:basis-1/3 p-12 flex flex-col justify-between"><img src={"/coordinators/njackcoordinators/" + src} alt="NJACK Coordinator" className="object-cover h-full" /><p>NJACK Coordinator</p></div>)}
         </div>
         <div style={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
           <a
@@ -599,11 +683,8 @@ const clubdata = [
         <p>
           MoodBoard Design Club at IIT Patna is a dynamic community that fosters creativity and design skills among students. Throughout the year, the club engages in various workshops, collaborative projects, and exhibitions to enhance members' visual communication and design thinking abilities. The club serves as a platform for students to explore various facets of design, from graphic design and photo manipulation to 3D animation and user experience design.
         </p>
-        <div style={{ marginTop: '20px' }}>
-          <img src="/images/dummy1.jpg" alt="Dummy Image 1" />
-          <p>Caption for Dummy Image 1</p>
-          <img src="/images/dummy2.jpg" alt="Dummy Image 2" />
-          <p>Caption for Dummy Image 2</p>
+        <div className="flex flex-wrap mt-[20px]">
+        {moodboardCoordinators.map(src => <div className="basis-1/2 p-12 flex flex-col justify-between"><img src={"/coordinators/moodboardcoordinators/" + src} alt="MoodBoard Coordinator" className="object-cover h-full" /><p>MoodBoard Coordinator</p></div>)}
         </div>
         <div style={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
           <a
@@ -639,11 +720,8 @@ const clubdata = [
         <p>
           Astronomy and Particle Physics (AP) Club is a team of enthusiastic people who share a common goal of exploring, studying, and experimenting with a wide variety of Astronomy and Particle Physics related topics, facts, and new discoveries. We have been trying to make people aware of scintillating stuff right from the nano-level world to the vastness of the cosmos!
         </p>
-        <div style={{ marginTop: '20px' }}>
-          <img src="/images/dummy1.jpg" alt="Dummy Image 1" />
-          <p>Caption for Dummy Image 1</p>
-          <img src="/images/dummy2.jpg" alt="Dummy Image 2" />
-          <p>Caption for Dummy Image 2</p>
+        <div className="flex flex-wrap mt-[20px]">
+        {apcCoordinators.map(src => <div className="md:basis-1/2 lg:basis-1/3 p-12 flex flex-col justify-between"><img src={"/coordinators/apccoordinators/" + src} alt="APC Coordinator" className="object-cover h-full" /><p>APC Coordinator</p></div>)}
         </div>
         <div style={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
           <a
@@ -679,11 +757,8 @@ const clubdata = [
         <p>
           SCME was founded with the motive of engaging and encouraging Mechanical Engineering discipline related activities in IIT Patna. Since its inception, SCME has been conducting events, lectures and workshops round the year for the benefit of mechanical engineering students.
         </p>
-        <div style={{ marginTop: '20px' }}>
-          <img src="/images/dummy1.jpg" alt="Dummy Image 1" />
-          <p>Caption for Dummy Image 1</p>
-          <img src="/images/dummy2.jpg" alt="Dummy Image 2" />
-          <p>Caption for Dummy Image 2</p>
+        <div className="flex flex-wrap mt-[20px]">
+        {scmeCoordinators.map(src => <div className="basis-1/2 p-12 flex flex-col justify-between"><img src={"/coordinators/scmecoordinators/" + src} alt="SCME Coordinator" className="object-cover h-full" /><p>SCME Coordinator</p></div>)}
         </div>
         <div style={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
           <a
@@ -719,11 +794,8 @@ const clubdata = [
         <p>
           MaTES is a combined step of students and faculty of IIT PATNA to create an environment of inquisitiveness about metallurgy and materials through various interesting events, informative workshops and inquisitive guest lectures. Our organization's aim is to promote creativity, potency, morals in students and boost awareness about materials in the society.
         </p>
-        <div style={{ marginTop: '20px' }}>
-          <img src="/images/dummy1.jpg" alt="Dummy Image 1" />
-          <p>Caption for Dummy Image 1</p>
-          <img src="/images/dummy2.jpg" alt="Dummy Image 2" />
-          <p>Caption for Dummy Image 2</p>
+        <div className="flex flex-wrap mt-[20px]">
+        {matesCoordinators.map(src => <div className="md:basis-1/2 lg:basis-1/3 p-12 flex flex-col justify-between"><img src={"/coordinators/matescoordinators/" + src} alt="MaTES Coordinator" className="object-cover h-full" /><p>MaTES Coordinator</p></div>)}
         </div>
         <div style={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
           <a
@@ -758,11 +830,8 @@ const clubdata = [
         <p>
           ChESSx aims at providing the needed support to produce the best chemical engineering graduates of tomorrow. It aims at making the students familiar with the scientific and industrial know-how and well equipping them to handle real-world problems so that they can better adapt themselves at their workplace once they graduate.
         </p>
-        <div style={{ marginTop: '20px' }}>
-          <img src="/images/dummy1.jpg" alt="Dummy Image 1" />
-          <p>Caption for Dummy Image 1</p>
-          <img src="/images/dummy2.jpg" alt="Dummy Image 2" />
-          <p>Caption for Dummy Image 2</p>
+        <div className="flex flex-wrap mt-[20px]">
+        {chessxCoordinators.map(src => <div className="md:basis-1/2 lg:basis-1/3 p-12 flex flex-col justify-between"><img src={"/coordinators/chessxcoordinators/" + src} alt="ChessX Coordinator" className="object-cover h-full" /><p>ChessX Coordinator</p></div>)}
         </div>
         <div style={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
           <a
@@ -798,11 +867,8 @@ const clubdata = [
         <p>
           Sparkonics is the Electrical engineering society of IIT Patna which aims to make students aware and better equipped to handle real-world problems related to Electrical engineering and related interdisciplinary fields by the means of projects and various workshops and guest lectures.
         </p>
-        <div style={{ marginTop: '20px' }}>
-          <img src="/images/dummy1.jpg" alt="Dummy Image 1" />
-          <p>Caption for Dummy Image 1</p>
-          <img src="/images/dummy2.jpg" alt="Dummy Image 2" />
-          <p>Caption for Dummy Image 2</p>
+        <div className="flex flex-wrap mt-[20px]">
+        {sparkonicsCoordinators.map(src => <div className="md:basis-1/2 lg:basis-1/3 p-12 flex flex-col justify-between"><img src={"/coordinators/sparkonicscoordinators/" + src} alt="Sparkonics Coordinator" className="object-cover h-full" /><p>Sparkonics Coordinator</p></div>)}
         </div>
         <div style={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
           <a
@@ -838,11 +904,8 @@ const clubdata = [
         <p>
           Team Phoenix IIT Patna is the official robotics contingent of IIT Patna in ABU Robocon. We seek passionate individuals and offer diverse learning opportunities in robotics through workshops, hackathons, and mentorship programs, including participation in the MathWorks Simulation contest.
         </p>
-        <div style={{ marginTop: '20px' }}>
-          <img src="/images/dummy1.jpg" alt="Dummy Image 1" />
-          <p>Caption for Dummy Image 1</p>
-          <img src="/images/dummy2.jpg" alt="Dummy Image 2" />
-          <p>Caption for Dummy Image 2</p>
+        <div className="flex flex-wrap mt-[20px]">
+        {phoenixCoordinators.map(src => <div className="md:basis-1/2 lg:basis-1/3 p-12 flex flex-col justify-between"><img src={"/coordinators/phoenixcoordinator/" + src} alt="Phoenix Coordinator" className="object-cover h-full" /><p>Phoenix Coordinator</p></div>)}
         </div>
         <div style={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
           <a
@@ -878,11 +941,8 @@ const clubdata = [
         <p>
           Tinkerer's Lab at IIT Patna allows you to build things on your own, from scratch. This gives you practical and hands-on experience. The lab is almost entirely student-run. The lack of deadlines and pressure allows you to tinker and develop your ideas with full freedom.
         </p>
-        <div style={{ marginTop: '20px' }}>
-          <img src="/images/dummy1.jpg" alt="Dummy Image 1" />
-          <p>Caption for Dummy Image 1</p>
-          <img src="/images/dummy2.jpg" alt="Dummy Image 2" />
-          <p>Caption for Dummy Image 2</p>
+        <div className="flex flex-wrap mt-[20px]">
+        {tinkererslabCoordinators.map(src => <div className="md:basis-1/2 lg:basis-1/3 p-12 flex flex-col justify-between"><img src={"/coordinators/tinkererslabcoordinators/" + src} alt="Tinkerers' Lab Coordinator" className="object-cover h-full" /><p>Tinkerers' Lab Coordinator</p></div>)}
         </div>
         <div style={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
           <a
@@ -918,11 +978,8 @@ const clubdata = [
         <p>
           The Association of Civil Engineers is an official club of the Department of Civil and Environmental Engineering at IIT Patna. It aims to facilitate student-faculty interaction, provide a platform for showcasing work and knowledge, and enhance abilities through workshops and events.
         </p>
-        <div style={{ marginTop: '20px' }}>
-          <img src="/images/dummy1.jpg" alt="Dummy Image 1" />
-          <p>Caption for Dummy Image 1</p>
-          <img src="/images/dummy2.jpg" alt="Dummy Image 2" />
-          <p>Caption for Dummy Image 2</p>
+        <div className="flex flex-wrap mt-[20px]">
+        {aceCoordinators.map(src => <div className="md:basis-1/2 lg:basis-1/3 p-12 flex flex-col justify-between"><img src={"/coordinators/acecoordinators/" + src} alt="ACE Coordinator" className="object-cover h-full" /><p>ACE Coordinator</p></div>)}
         </div>
         <div style={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
           <a
@@ -958,11 +1015,8 @@ const clubdata = [
         <p>
           RnA or Robotics and Aviation Club of IIT Patna is a newly formed club that focuses on drones, MAVs (Micro Air Vehicles), and aviation robotics. Here in RnA club, we all are family without any partiality.
         </p>
-        <div style={{ marginTop: '20px' }}>
-          <img src="/images/dummy1.jpg" alt="Dummy Image 1" />
-          <p>Caption for Dummy Image 1</p>
-          <img src="/images/dummy2.jpg" alt="Dummy Image 2" />
-          <p>Caption for Dummy Image 2</p>
+        <div className="flex flex-wrap mt-[20px]">
+        {rnaclubCoordinators.map(src => <div className="md:basis-1/2 lg:basis-1/3 p-12 flex flex-col justify-between"><img src={"/coordinators/rnaclubcoordinators/" + src} alt="RNA Club Coordinator" className="object-cover h-full" /><p>RNA Club Coordinator</p></div>)}
         </div>
         <div style={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
           <a
@@ -998,11 +1052,8 @@ const clubdata = [
         <p>
           The Trading and Investment Club at IIT Patna is rapidly growing and emphasizes consulting, investing, marketing, and product management. With a focus on winning competitions, creating opportunities, and skill-building, the club aims to establish a lasting finance legacy and become a top student-run club in India.
         </p>
-        <div style={{ marginTop: '20px' }}>
-          <img src="/images/dummy1.jpg" alt="Dummy Image 1" />
-          <p>Caption for Dummy Image 1</p>
-          <img src="/images/dummy2.jpg" alt="Dummy Image 2" />
-          <p>Caption for Dummy Image 2</p>
+        <div className="flex flex-wrap mt-[20px]">
+        {ticCoordinators.map(src => <div className="md:basis-1/2 lg:basis-1/3 p-12 flex flex-col justify-between"><img src={"/coordinators/ticcoordinators/" + src} alt="TIC Coordinator" className="object-cover h-full" /><p>TIC Coordinator</p></div>)}
         </div>
         <div style={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
           <a
@@ -1039,11 +1090,8 @@ const clubdata = [
           Welcome to the Entrepreneurship Cell (E-Cell) at IIT Patna, a vibrant community dedicated to fostering innovation, entrepreneurship, and leadership among students. Our mission is to inspire and empower the next
           generation of entrepreneurs through various workshops, events, and mentorship opportunities. E-Cell provides a platform for budding entrepreneurs to transform their ideas into successful ventures.
         </p>
-        <div style={{ marginTop: '20px' }}>
-          <img src="/images/dummy1.jpg" alt="Dummy Image 1" />
-          <p>Caption for Dummy Image 1</p>
-          <img src="/images/dummy2.jpg" alt="Dummy Image 2" />
-          <p>Caption for Dummy Image 2</p>
+        <div className="flex flex-wrap mt-[20px]">
+        {ecellCoordinators.map(src => <div className="md:basis-1/2 lg:basis-1/3 p-12 flex flex-col justify-between"><img src={"/coordinators/ecellcoordinators/" + src} alt="Ecell Coordinator" className="object-cover h-full" /><p>Ecell Coordinator</p></div>)}
         </div>
         <div style={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
           <a
@@ -1069,7 +1117,7 @@ const clubdata = [
         </div>
       </>
     ),
-    src: "/images/EcellLogo.jpg"
+    src: "/images/ecelllogo.jpg"
   }, {
     title: "Quantum Technology Club",
     category: "Quantum Technology",
@@ -1078,11 +1126,8 @@ const clubdata = [
         <p>
         Quantum Technology Club looks forward to bring all the quantum enthusiasts under a common hood and spread awareness about the fast growing quantum technology among the student community. The club tries to solve different problems using quantum computing techniques in such a time which is much less than that taken by a classical computer.
         </p>
-        <div style={{ marginTop: '20px' }}>
-          <img src="/images/dummy1.jpg" alt="Dummy Image 1" />
-          <p>Caption for Dummy Image 1</p>
-          <img src="/images/dummy2.jpg" alt="Dummy Image 2" />
-          <p>Caption for Dummy Image 2</p>
+        <div className="flex flex-wrap mt-[20px]">
+        {quantumtechCoordinators.map(src => <div className="md:basis-1/2 lg:basis-1/3 p-12 flex flex-col justify-between"><img src={"/coordinators/quantumtechcoordinators/" + src} alt="QTC Coordinator" className="object-cover h-full" /><p>QTC Coordinator</p></div>)}
         </div>
         <div style={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
           <a
