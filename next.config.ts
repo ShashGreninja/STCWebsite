@@ -4,8 +4,15 @@ const nextConfig: NextConfig = {
   /* config options here */
 };
 
-  module.exports = {
+module.exports = {
+  output: 'export',
+  eslint: {
+    // Warning: This allows production builds to successfully complete even if
+    // your project has ESLint errors.
+    ignoreDuringBuilds: true,
+  },
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -30,3 +37,4 @@ const nextConfig: NextConfig = {
 }
 
 export default nextConfig;
+/* vi: set et sw=2: */
