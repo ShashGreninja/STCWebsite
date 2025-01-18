@@ -58,11 +58,11 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-20 backdrop-blur-lg shadow-lg rounded-full z-20">
-        <div className="px-4 py-2">
-          <ul className="flex items-center space-x-6">
-            <li className="flex-shrink-0 mr-6">
-              <Link href="/" className="text-2xl font-extrabold text-white">STC</Link>
+      <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-20 backdrop-blur-lg shadow-lg rounded-full z-20 w-full max-w-6xl lg:max-w-none lg:w-auto">
+        <div className="px-2 py-2 lg:px-4">
+          <ul className="flex items-center justify-between space-x-1 sm:space-x-2 lg:space-x-4">
+            <li className="flex-shrink-0 mr-2 sm:mr-4 lg:mr-6">
+              <Link href="/" className="text-xl sm:text-2xl lg:text-2xl font-extrabold text-white">STC</Link>
             </li>
             {[
               { name: 'Home', icon: Home, href: "/" },
@@ -73,18 +73,18 @@ export default function Navbar() {
               { name: 'Team', icon: Users, href: "/#team" },
                // Added Clubs button
             ].map((item) => (
-              <li key={item.name}>
+              <li key={item.name} className="flex-shrink-0">
                 <Link
                   href={item.href}
                   onClick={(e) => handleScroll(e, item.href)}
                   target={item.href.startsWith('http') ? "_blank" : undefined}
                   rel={item.href.startsWith('http') ? "noopener noreferrer" : undefined}
-                  className={`flex items-center space-x-1 p-2 rounded-full transition-colors ${
+                  className={`flex items-center space-x-1 p-1 sm:p-2 rounded-full transition-colors ${
                     isActive(item.href) ? 'bg-white text-black' : 'text-white hover:bg-white/10'
                   }`}
                 >
-                  <item.icon className="w-5 h-5" />
-                  <span className="hidden sm:inline">{item.name}</span>
+                  <item.icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <span className="hidden sm:inline text-sm sm:text-base">{item.name}</span>
                 </Link>
               </li>
             ))}
