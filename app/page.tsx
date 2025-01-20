@@ -1,5 +1,5 @@
 'use client'
-
+import React from 'react';
 import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import { Button } from "./components/ui/button"
@@ -39,7 +39,7 @@ const moodboardCoordinators = ["Kunjal - Swastik Vishwakarma.jpg",
 "Swastik - Swastik Vishwakarma.jpg",
 ]
 const apcCoordinators = [
-  //"Harsh_Dahiya(Education and Outreach) - Khushal yadav.jpg",
+  "Harsh_Dahiya_apccoord.jpg",
 "Khushal_Yadav - Khushal yadav.jpg",
 "Priyanshi Sharma - Khushal yadav.jpg",
 "Subham Prasad Gouda - Khushal yadav.jpg",
@@ -598,8 +598,8 @@ export default function Page() {
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3600.0697031196537!2d84.8513104!3d25.536054999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398d5700288d5577%3A0xb87d51692f417876!2sStudent&#39;s%20Technical%20Council%20Office!5e0!3m2!1sen!2sin!4v1732065303619!5m2!1sen!2sin"
             allowFullScreen
-            className="w-[150px] h-[100px] md:w-[300px] md:h-[200px] "
-            style={{ border: 0 }}
+            className="w-[150px] h-[100px] md:w-[300px] md:h-[200px]"
+            style={{ border: 0, borderRadius: '10px' }}
           ></iframe></div>
       </Vortex>
 
