@@ -26,6 +26,7 @@ import { Vortex } from "../app/components/ui/vortex"
 // import { LayoutGrid } from './components/ui/celesta'
 import { FlipWords } from './components/ui/celesta'
 import CelestaBanner from './components/ui/banner'
+
 const njackCoordinators = ["IMG_9007 - Krishna Keshav Singh.jpeg",
 ,"jatin - vinayak goyal.jpg"
 ,"kanahia - vinayak goyal.jpg"
@@ -553,13 +554,13 @@ export default function Page() {
         className="flex-wrap flex items-center  justify-center space-around px-2 md:px-10 py-2 w-full h-full relative bottom"
       >
         <h2 className="text-white text-9xl md:text-8xl font-bold text-center p-3">
-          STC<div className="text-5xl md:text-2xl">IIT P</div>
+          STC<div className="text-5xl md:text-2xl">IITP</div>
         </h2>
-        <p className="text-white text-sm md:text-l max-w-xl mt-6 text-center p-14">
-          The council of Student's Gymkhana to nurture the advancement of technical culture of Indian Institute of Technology, Patna.
-          <br />© Copyright Student Technical Council, IITP.
-          <br />Contact us at stc@iitp.ac.in ; gensec_tech@iitp.ac.in
-        </p>
+        <p className={`text-white text-sm md:text-l max-w-xl mt-6 text-center p-14 ${montserrat.className}`}>
+  The council of Student's Gymkhana to nurture the advancement of technical culture of Indian Institute of Technology, Patna.
+  <br />© Copyright Student Technical Council, IITP.
+  <br />Contact us at stc@iitp.ac.in ; gensec_tech@iitp.ac.in
+</p>
 
 
         <div className="flex justify-center space-x-4 text-[#e6e6e6] m-12">
